@@ -102,7 +102,7 @@ initialized.
 Health check:
 
 ```bash
-curl -i http://127.0.0.1:3000/healthz
+curl -i http://127.0.0.1:3000/health
 ```
 
 Classify a 16 kHz mono WAV file:

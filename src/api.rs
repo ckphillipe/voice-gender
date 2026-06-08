@@ -64,12 +64,12 @@ impl IntoResponse for ApiError {
 
 pub(crate) fn router(batcher: mpsc::Sender<BatchRequest>) -> Router {
     Router::new()
-        .route("/healthz", get(healthz))
+        .route("/health", get(health))
         .route("/v1/gender", post(classify_gender))
         .with_state(Arc::new(AppState { batcher }))
 }
 
-async fn healthz() -> StatusCode {
+async fn health() -> StatusCode {
     StatusCode::NO_CONTENT
 }
 
